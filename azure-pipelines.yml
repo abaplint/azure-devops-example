@@ -11,7 +11,8 @@ steps:
 - script: |
     abaplint -f standard --outformat junit --outfile report.xml "src/**/*.*" || true
   displayName: 'abaplint Run'
-- task: PublishTestResults@1
+- task: PublishTestResults@2
   inputs:
-    testRunner: 'JUnit'
+    testResultsFormat: 'JUnit'
     testResultsFiles: 'report.xml' 
+    failTaskOnFailedTests: true
