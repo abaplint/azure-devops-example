@@ -4,11 +4,10 @@ pool:
 steps:
 - script: |
     npm install abaplint -g
-  displayName: 'ABAPLint Install'
+  displayName: 'abaplint Install'
 - script: |
     abaplint --version
-    abaplint -f standard --outformat junit --outfile report.xml "src/**/*.*"
-  displayName: 'ABAPLint Version'
+  displayName: 'abaplint Version'
 - script: |
     abaplint -f standard --outformat junit --outfile report.xml "src/**/*.*"
-  displayName: 'ABAPLint Run'
+  displayName: 'abaplint Run'
