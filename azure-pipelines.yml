@@ -9,7 +9,7 @@ steps:
     abaplint --version
   displayName: 'abaplint Version'
 - script: |
-    abaplint -f standard --outformat junit --outfile report.xml "src/**/*.*" >nul 2>nul
+    abaplint -f standard --outformat junit --outfile report.xml "src/**/*.*" || true
   displayName: 'abaplint Run'
 - task: PublishTestResults@1
   inputs:
